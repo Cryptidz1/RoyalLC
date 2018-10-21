@@ -48,7 +48,13 @@ public class Controller implements Initializable {
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     slider.setValue(INIT_VALUE);
-    
+    Image picture;
+    try {
+      picture = new Image(new FileInputStream("Assets/203593-200.png));
+      foodPicture.setImage(picture);
+    } catch (FileNotFoundException e) {
+
+    }
     if(slide == 1) {
       person1.setVisible(false);
     } else if(slide == 2) {
@@ -62,6 +68,7 @@ public class Controller implements Initializable {
       person5.setVisible(true);
       person6.setVisible(true);
     }
+   
     /*switch  (INIT_VALUE) {
       case 1:
         person1.setVisible(true);
